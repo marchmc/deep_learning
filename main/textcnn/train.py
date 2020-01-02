@@ -108,7 +108,7 @@ with tf.Graph().as_default():
 
         # Output directory for models and summaries
         timestamp = str(int(time.time()))
-        out_dir = os.path.abspath(os.path.join("/Users/arthurma/DL/myDeepLearning/tf_serving_demo/text_cnn/model/", "runs", timestamp))
+        out_dir = os.path.abspath(os.path.join("********", "runs", timestamp))
         print("Writing to {}\n".format(out_dir))
 
         # Summaries for loss and accuracy
@@ -187,6 +187,6 @@ with tf.Graph().as_default():
                 path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                 print("Saved model checkpoint to {}\n".format(path))
 
-        model_output_dir = "/Users/arthurma/DL/myDeepLearning/tf_serving_demo/model/202001020002"
+        model_output_dir = "******"
         tf.saved_model.simple_save(sess, model_output_dir, inputs={"myInput": cnn.input_x,'input_dropout_keep_prob':cnn.dropout_keep_prob},
                                    outputs={"myOutput": cnn.predictions})
